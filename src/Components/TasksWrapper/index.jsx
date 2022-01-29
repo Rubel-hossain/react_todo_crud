@@ -55,6 +55,10 @@ const TasksWrapper = ()=>{
         }
         
     }
+    const handleDelete = (id)=>{
+        setTodoList(todoList.filter(item=>item.id !== id));
+    }
+
     return (
         <div className="tasks_wrapper">
           <div className="container">
@@ -89,7 +93,10 @@ const TasksWrapper = ()=>{
                                  <SingleTask 
                                  todo={todo} 
                                  editAble={editAble} 
-                                 handleTodoEdit={handleTodoEdit} />
+                                 handleTodoEdit={handleTodoEdit} 
+                                 handleDelete={handleDelete}
+                                 />
+
                               </ListGroup>
                           ))}
                       </div>
